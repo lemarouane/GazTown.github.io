@@ -49,6 +49,8 @@
 	Reset
 ====================================================================
 
+
+
  ***/
 
 * {
@@ -438,6 +440,56 @@ img {
 ====================================================================
 
 ***/
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icon {
+    width: 40px; /* Largeur du cadre circulaire */
+    height: 40px; /* Hauteur du cadre circulaire */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Rendre le cadre circulaire */
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #fff; /* Couleur de l'icône par défaut */
+    font-size: 20px;
+}
+
+/* Couleurs de fond pour chaque icône */
+.facebook-icon {
+    background-color: #1877f2; /* Couleur Facebook */
+}
+
+.twitter-icon {
+    background-color: #1da1f2; /* Couleur Twitter */
+}
+
+.instagram-icon {
+    background-color: #bc2a8d; /* Couleur Instagram */
+}
+
+.whatsapp-icon {
+    background-color: #25d366; /* Couleur WhatsApp */
+}
+
+
+/* Ajoutez d'autres classes pour d'autres icônes de médias sociaux au besoin */
+.social-icon:hover {
+    background-color: #c72127; /* Couleur de fond au survol */
+}
+
+
+
 
 .scroll-to-top {
     position: fixed;
@@ -649,7 +701,7 @@ img {
     width: 40px;
     height: 40px;
     text-align: center;
-    color: #555555;
+    color: #ba8f8f;
     font-size: 12px;
     background: none;
     cursor: pointer;
@@ -691,7 +743,7 @@ img {
     word-spacing: 1px;
     letter-spacing: 0.02em;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 1.3em;
     opacity: 1;
     text-transform: uppercase;
     transition: all 500ms ease;
@@ -699,6 +751,7 @@ img {
     -webkit-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .header-style-two .main-menu .navigation>li>a {
@@ -895,7 +948,30 @@ img {
 	Main Banner style
 ====================================================================
 
+
 ***/
+
+
+
+
+
+
+/* Style des images du carrousel */
+.image-1 {
+    background: url('images/resource/1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.image-2 {
+    background: url('images/resource/2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.image-3 {
+    background: url('images/resource/3.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
 
 .main-banner {
     position: relative;
@@ -904,27 +980,56 @@ img {
 .main-banner .banner-inner {
     position: relative;
     padding: 160px 0px 220px;
-    background: url(../images/icons/bg-shapes/bg-banner.png) center bottom no-repeat;
+    background: url(../images/resource/1.jpg) center bottom no-repeat;
     background-size: cover;
     color: #ffffff;
     height: 100vh;
+    animation: slide 30s infinite;
 }
 
-.main-banner .banner-inner .content-box {
-    position: relative;
-    padding-top: 120px;
+@keyframes slide {
+    0% {background-image: url(../images/resource/1.jpg);}
+    33% {background-image: url(../images/resource/2.jpg);}
+    66% {background-image: url(../images/resource/3.jpg);}
 }
 
-.main-banner .banner-inner h2 {
-    position: relative;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.40em;
-    margin-bottom: 30px;
+
+.banner-controls {
+    text-align: center;
+    margin-top: 20px;
 }
+
+#prev-button,
+#next-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#prev-button:hover,
+#next-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.main-banner .content-box h2 {
+    font-size: 3em; /* Adjust size as needed */
+    text-shadow: 2px 2px 4px #000000; /* Adjust shadow as needed */
+}
+
+.main-banner .content-box .btn-inner {
+    font-size: 1.5em; /* Adjust size as needed */
+    text-shadow: 1px 1px 2px #000000; /* Adjust shadow as needed */
+}
+
 
 .main-banner .banner-inner .text {
-    position: relative;
+    position: center;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.8em;
